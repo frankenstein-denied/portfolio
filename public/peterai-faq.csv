@@ -4,39 +4,124 @@ id,category,question,answer
 3,about,What is PeterAI?,"I'm PeterAI, an assistant that answers questions about Peter's skills, projects, and how to contact him. For anything important, click the ""Get in touch with me"" button to reach Peter directly."
 4,about,Where does Peter study?,"Peter studies Computer Science at Sorsogon State University, College of Information and Communication Technology (CICT), Bulan Campus."
 5,about,What year is Peter in?,"Peter is a 4th-year Computer Science student, expected to graduate in 2027."
-6,about,Where is Peter located?,"Peter is based in Sorsogon City, Philippines, and is open to remote work."
+6,about,Where is Peter located?,"Peter is based in Sorsogon City, Sorsogon, Philippines (Bicol Region), and is open to remote work."
 7,about,What are Peter's hobbies?,"Outside of coding, Peter enjoys sports, sinigang, and sleeping."
-8,skills,What are Peter's skills?,"Peter works across web development, Android development, and backend services like Firebase and Supabase. He's proficient in AI-assisted development and understands software architecture, SDLC, and testing principles."
-9,skills,What tech stack does Peter use?,"Peter's main stack is React, Vite, Next.js, shadcn/ui, Tailwind, Node.js, Firebase, Supabase, Vercel, GitHub, and Playwright."
-10,skills,What programming languages does Peter know?,"Peter works with TypeScript, JavaScript, and SQL/NoSQL. He is most comfortable with agentic coding."
-11,skills,Does Peter know Firebase?,Yes. Peter has used Firebase Firestore and Firebase Authentication in most of his projects — including this portfolio's hearts and comments, which run on Firebase Firestore.
-12,skills,Does Peter know Supabase?,"Yes. Peter has experience with Supabase for Postgres databases, row-level security, and realtime features."
-13,skills,Can Peter deploy applications?,"Yes. Peter deploys web apps on Vercel and uses Git and GitHub for version control, branching, and pull requests."
-14,skills,Does Peter do Android development?,"Yes, Peter sometimes builds Android apps using Expo React."
-15,skills,Is Peter interested in cybersecurity?,"Yes. Peter is interested in cybersecurity, including securing AI-generated code."
-16,skills,Does Peter know machine learning?,Peter is interested in machine learning and data science. He has worked with NumPy and other data science and machine learning tools.
-17,workflow,Does Peter use AI to code?,"Yes, and openly. Peter uses AI coding tools such as Claude Code, Superpowers, and Graphify to build quickly, but he plans the architecture, reviews the output, tests it, and can explain every part of his projects."
-18,workflow,Can Peter code without AI?,"Peter uses AI to speed up implementation, but he understands the architecture, tech stack, and code he ships. He can read, debug, and explain his work, and he keeps strengthening his hands-on coding skills."
-19,workflow,What is Peter's development process?,"Peter follows the Software Development Life Cycle: he defines requirements, designs the architecture, implements with AI-assisted tools, tests, then deploys and maintains. He applies STLC principles and the testing pyramid for reliable software."
-20,workflow,How does Peter test his projects?,"Peter follows the testing pyramid: many unit tests, fewer integration tests, and a small number of end-to-end tests. He applies Software Testing Life Cycle principles when planning and running tests."
-21,strengths,What are Peter's strengths?,"Peter builds and ships quickly with AI-assisted tools, understands software architecture and engineering principles, follows SDLC and testing best practices, takes ownership of his tasks, and explains his work clearly."
-22,strengths,Why should we hire Peter?,"Peter combines fast AI-assisted delivery with a solid grasp of architecture, testing, and deployment. He takes full ownership of his work, is eager to learn, and communicates clearly with both technical and non-technical people."
-23,strengths,Is Peter a team player?,Yes. Peter takes ownership of tasks given to him and can explain his work clearly to teammates.
-24,strengths,What are Peter's weaknesses?,Peter hasn't declared this one yet.
-25,projects,What projects has Peter built?,"Peter's projects include Delbert Boarding House, Kudos App, PomoGrove, University Sports Center, and MeetingSense — you can see each one in the newsfeed with a live demo link."
-26,projects,What is Peter's best project?,Peter's flagship project is PomoGrove. Try it live using the link on its card in the feed.
-27,projects,What is Peter's thesis about?,Peter hasn't declared his thesis title yet — check back here for updates.
-28,projects,How was this portfolio built?,"This portfolio was designed as a social-profile-style site. The frontend was generated with v0 and built out with Claude Code using Next.js, Tailwind CSS, and Firebase, deployed on Vercel."
-29,experience,Does Peter have work experience?,Peter was an intern at Tidework LLC for almost 2 months.
-30,experience,Has Peter done an internship?,"Yes, at Tidework LLC as a Technical QA, for about 2 months."
-31,experience,Does Peter have certifications?,As of now Peter is focusing on his personal projects and hasn't obtained any certifications yet.
-32,availability,Is Peter open to work?,"Yes. Peter is open to freelance and full-time roles in web development, full-stack, and related fields."
-33,availability,Is Peter available for freelance?,"Yes, Peter accepts freelance projects such as websites and web apps. Click ""Get in touch with me"" to reach him with your project details."
-34,availability,When can Peter start?,"Peter can personally provide details about that — click the ""Get in touch with me"" button above to reach him."
-35,contact,How can I contact Peter?,"You can reach Peter by email at peterpaulpoloan@gmail.com, on LinkedIn, or on Facebook — all available through the ""Get in touch with me"" button above."
-36,contact,What is Peter's email?,Peter's email is peterpaulpoloan@gmail.com.
-37,contact,Where can I see Peter's resume?,You can download Peter's CV using the 'Download CV' button at the top of the profile.
-38,contact,Does Peter have a GitHub?,Yes. Click the GitHub icon above and it will take you to his GitHub.
-39,contact,What is Peter's LinkedIn?,"You can find his LinkedIn through the ""Get in touch with me"" button above."
-40,fallback,Can you help me with my homework?,"I can only help with questions about Peter, like his skills, projects, or how to contact him. Is there something you'd like to know about Peter?"
-41,fallback,Can you write code for me?,"I'm here to answer questions about Peter, not to write code. You can ask me about his projects or skills instead."
+8,about,What is Peter's full name?,Peter's full name is Peter Paul Poloan (surname: Poloan).
+9,about,What is Peter's surname?,Peter's surname is Poloan.
+10,about,How old is Peter?,"Peter was born on June 29, 2004."
+11,about,When is Peter's birthday?,"Peter's birthday is June 29, 2004."
+12,about,What is Peter's course?,"Peter is taking a Bachelor of Science in Computer Science (BSCS) at Sorsogon State University, Bulan Campus."
+13,about,What is Peter's year and block?,"Peter is in BSCS 4-1 (4th year, block 1)."
+14,about,When will Peter graduate?,Peter is expected to graduate in 2027.
+15,about,Does Peter have a phone?,Yes. Peter can be reached by phone at 09923885169 (DITO) or 09665625356 (Globe).
+16,skills,What are Peter's skills?,"Peter works across web development, Android development, and backend services like Firebase and Supabase. He's proficient in AI-assisted development, structuring projects for AI coding agents, and understands software architecture, SDLC, and testing principles."
+17,skills,What tech stack does Peter use?,"Peter's main stack is React, Vite, Next.js, shadcn/ui, Tailwind, Node.js, Firebase (Firestore and Auth), Supabase, Vercel, GitHub, and Playwright. Most of his projects are built with Next.js or React + Vite, with Firebase Firestore and Firebase Auth on the backend."
+18,skills,What programming languages does Peter know?,"Peter works with TypeScript, JavaScript, and SQL/NoSQL. He is most comfortable with agentic coding."
+19,skills,Does Peter know Firebase?,"Yes. Peter has used Firebase Firestore and Firebase Authentication in most of his projects — including this portfolio's hearts and comments, which run on Firebase Firestore."
+20,skills,Does Peter know Supabase?,"Yes. Peter has experience with Supabase for Postgres databases, row-level security, and realtime features."
+21,skills,Can Peter deploy applications?,"Yes. Peter has deployment experience on Vercel and uses Git and GitHub for version control, including staging, branching, rebasing, and pull requests."
+22,skills,Does Peter do Android development?,"Yes, Peter sometimes builds Android apps using Expo React."
+23,skills,Is Peter interested in cybersecurity?,"Yes. Peter is interested in cybersecurity, including securing AI-generated code."
+24,skills,Does Peter know machine learning?,Peter is interested in machine learning and data science. He has worked with NumPy and other data science and machine learning tools.
+25,skills,What laptop does Peter use?,Peter's main work machine is a Lenovo ThinkPad X1 Carbon 7th Gen with 16GB RAM and a 256GB SSD. He uses it for all his programming tasks.
+26,skills,What are Peter's laptop specs?,"Lenovo ThinkPad X1 Carbon (7th Gen), 16GB RAM, 256GB SSD."
+27,skills,What frameworks does Peter use?,"Peter mostly builds with Next.js and React + Vite, styled with Tailwind CSS and shadcn/ui."
+28,skills,Does Peter know Next.js?,Yes. Most of Peter's projects are built with Next.js.
+29,skills,Does Peter know React?,"Yes. Peter builds with React, including React + Vite and Next.js projects."
+30,skills,What database does Peter use?,"Peter mostly uses Firebase Firestore, and also has experience with Supabase (Postgres)."
+31,skills,What authentication does Peter use?,Peter uses Firebase Authentication in most of his projects.
+32,skills,Does Peter know Git and GitHub?,"Yes. Peter uses GitHub for version control and is comfortable with staging, branching, and rebasing."
+33,skills,Can Peter rebase and branch in Git?,"Yes. Peter has skills in Git staging, branching, and rebasing."
+34,skills,Does Peter know Vercel?,Yes. Peter has deployment experience on Vercel.
+35,skills,Does Peter know Tailwind CSS?,Yes. Peter uses Tailwind CSS together with shadcn/ui in his projects.
+36,skills,Does Peter write documentation?,Yes. Peter writes his project documentation in README.md files.
+37,skills,Does Peter write clean and scalable code?,"Yes. Peter makes sure his projects follow separation of concerns, modularity, and scalability."
+38,workflow,Does Peter use AI to code?,"Yes, and openly. Peter uses Claude Code with the Obra Superpowers framework for personal projects and the BMAD method for professional jobs, plus Graphify to map existing codebases. He plans the architecture, reviews the output, tests it, and can explain every part of his projects."
+39,workflow,Can Peter code without AI?,"Peter uses AI to speed up implementation, but he understands the architecture, tech stack, and code he ships. He can read, debug, and explain his work, and he keeps strengthening his hands-on coding skills."
+40,workflow,What is Peter's development process?,"Peter follows the Software Development Life Cycle: he defines requirements, designs the architecture, implements with AI-assisted tools, tests, then deploys and maintains. He applies STLC principles and the testing pyramid for reliable software."
+41,workflow,How does Peter test his projects?,"Peter follows the testing pyramid: many unit tests, fewer integration tests, and a small number of end-to-end tests. He applies Software Testing Life Cycle principles when planning and running tests."
+42,workflow,What AI tools does Peter use?,"Peter uses Claude Code with the Obra Superpowers framework for personal projects, the BMAD method for professional jobs, and Graphify to map existing codebases."
+43,workflow,What is the BMAD method?,"BMAD is a structured, agent-driven development method. Peter uses it for professional jobs to keep AI-assisted work organized and consistent."
+44,workflow,What is Obra Superpowers?,Obra Superpowers is a framework for Claude Code. Peter uses it for his personal projects.
+45,workflow,What is Graphify?,"Graphify is a tool Peter uses to map out existing codebases that are handed over to him, so he can understand them quickly."
+46,workflow,How does Peter handle inherited codebases?,"When a codebase is transferred to him, Peter uses Graphify to map out its structure first, then works from that understanding."
+47,workflow,How does Peter work with AI coding agents?,"Peter understands a project's structure and turns it into clear prompts for AI coding agents, with separation of concerns, so tasks are completed accurately."
+48,workflow,What is Peter's prompting skill?,"Peter writes clear, structured prompts and breaks work into well-separated concerns so AI coding agents can complete tasks reliably."
+49,workflow,Does Peter use Claude Code?,"Yes. Peter uses Claude Code, with the Obra Superpowers framework for personal projects and the BMAD method for professional jobs."
+50,workflow,Does Peter use version control?,"Yes. Peter uses Git and GitHub, with staging, branching, rebasing, and pull requests."
+51,strengths,What are Peter's strengths?,"Peter builds and ships quickly with AI-assisted tools, understands software architecture and engineering principles, follows SDLC and testing best practices, takes ownership of his tasks, and explains his work clearly."
+52,strengths,Why should we hire Peter?,"Peter combines fast AI-assisted delivery with a solid grasp of architecture, testing, and deployment. He takes full ownership of his work, is eager to learn, and communicates clearly with both technical and non-technical people."
+53,strengths,Is Peter a team player?,Yes. Peter takes ownership of tasks given to him and can explain his work clearly to teammates.
+54,strengths,What are Peter's weaknesses?,Peter hasn't declared this one yet.
+55,strengths,What is Peter best at?,"Peter is best at understanding system structure and translating it into clear prompts for AI coding agents, while keeping projects modular, scalable, and well separated by concern."
+56,strengths,Does Peter write modular code?,Yes. Modularity and scalability are always part of how Peter structures his projects.
+57,strengths,What is Peter's approach to architecture?,"Peter focuses on separation of concerns, modularity, and scalability, and documents his projects in README.md."
+58,projects,What projects has Peter built?,"Peter's projects include Delbert Boarding House, Kudos App, PomoGrove, University Sports Center, and MeetingSense — you can see each one in the newsfeed with a live demo link."
+59,projects,What is Peter's best project?,Peter's flagship project is PomoGrove. Try it live using the link on its card in the feed.
+60,projects,What is Peter's thesis about?,Peter hasn't declared his thesis title yet — check back here for updates.
+61,projects,How was this portfolio built?,"This portfolio was designed as a social-profile-style site. The frontend was generated with v0 and built out with Claude Code using Next.js, Tailwind CSS, and Firebase, deployed on Vercel."
+62,experience,Does Peter have work experience?,Yes. Peter interned at ODI / Tidework LLC as a Technical QA for almost 2 months.
+63,experience,Has Peter done an internship?,"Yes, at ODI / Tidework LLC as a Technical QA, for about 2 months."
+64,experience,Does Peter have certifications?,As of now Peter is focusing on his personal projects and hasn't obtained any certifications yet.
+65,experience,What was Peter's role at Tidework?,Peter was a Technical QA intern at ODI / Tidework LLC.
+66,experience,What is ODI?,ODI / Tidework is the company where Peter interned as a Technical QA.
+67,experience,How long was Peter's internship?,"About 2 months, as a Technical QA intern at ODI / Tidework LLC."
+68,experience,What roles is Peter interested in?,Peter is interested in web development roles and cybersecurity roles.
+69,experience,Is Peter interested in web development jobs?,"Yes. Web development is Peter's main focus, and he is open to web development roles."
+70,experience,Is Peter interested in cybersecurity jobs?,Yes. Peter is interested in cybersecurity roles.
+71,availability,Is Peter open to work?,"Yes. Peter is open to freelance, contractual, and full-time roles in web development, full-stack, and cybersecurity. Click ""Get in touch with me"" to reach him."
+72,availability,Is Peter available for freelance?,"Yes, Peter accepts freelance and contractual projects such as websites and web apps. Click ""Get in touch with me"" or contact him directly with your project details."
+73,availability,When can Peter start?,"Peter can personally provide details about that — click the ""Get in touch with me"" button above to reach him."
+74,availability,What are Peter's work hours?,Peter's work hours are 8:00 AM to 5:00 PM.
+75,availability,When is Peter available?,Peter's regular work hours are 8:00 AM to 5:00 PM. He is also open to freelance and contractual work.
+76,availability,Is Peter open to contractual work?,Yes. Peter is open to contractual work as well as freelance and full-time roles.
+77,availability,Is Peter open to remote work?,"Yes. Peter is based in Sorsogon City, Philippines, and is open to remote work."
+78,availability,Can I hire Peter?,"Yes. Peter is open to freelance, contractual, and full-time work. Click ""Get in touch with me"" or contact him by email or phone."
+79,contact,How can I contact Peter?,"You can reach Peter by email at peterpaulpoloan@gmail.com, by phone at 09923885169 (DITO) or 09665625356 (Globe), on LinkedIn, or on Facebook. LinkedIn and Facebook are available through the ""Get in touch with me"" button above."
+80,contact,What is Peter's email?,Peter's email is peterpaulpoloan@gmail.com.
+81,contact,Where can I see Peter's resume?,You can download Peter's CV using the 'Download CV' button at the top of the profile.
+82,contact,Does Peter have a GitHub?,Yes. Click the GitHub icon above and it will take you to his GitHub.
+83,contact,What is Peter's LinkedIn?,"You can find his LinkedIn through the ""Get in touch with me"" button above."
+84,contact,What is Peter's phone number?,Peter's phone numbers are 09923885169 (DITO) and 09665625356 (Globe).
+85,contact,What is Peter's DITO number?,Peter's DITO number is 09923885169.
+86,contact,What is Peter's Globe number?,Peter's Globe number is 09665625356.
+87,contact,Can I call Peter?,Yes. You can call or text Peter at 09923885169 (DITO) or 09665625356 (Globe).
+88,combined,Is Peter available for freelance and how can I contact him?,"Yes. Peter accepts freelance and contractual projects such as websites and web apps. Reach him at peterpaulpoloan@gmail.com, by phone at 09923885169 (DITO) or 09665625356 (Globe), or through the ""Get in touch with me"" button above."
+89,combined,What are Peter's work hours and is he open to freelance?,"Peter's regular work hours are 8:00 AM to 5:00 PM, and he is also open to freelance and contractual work."
+90,combined,Can I hire Peter and what is his email and phone number?,"Yes, Peter is open to freelance, contractual, and full-time roles. Email: peterpaulpoloan@gmail.com. Phone: 09923885169 (DITO) or 09665625356 (Globe)."
+91,combined,Is Peter open to remote work and what are his hours?,"Yes, Peter is based in Sorsogon City, Philippines, and is open to remote work. His regular hours are 8:00 AM to 5:00 PM."
+92,combined,Where does Peter study and does he have work experience?,"Peter is a BSCS 4-1 student at Sorsogon State University, CICT, Bulan Campus. He interned for almost 2 months as a Technical QA at ODI / Tidework LLC."
+93,combined,"What is Peter's course, year, and expected graduation?","Peter is taking BSCS (Bachelor of Science in Computer Science), year 4 block 1, and is expected to graduate in 2027."
+94,combined,Tell me about Peter's education and skills,"Peter is a 4th-year BSCS student at Sorsogon State University, Bulan Campus (CICT), expected to graduate in 2027. His skills include Next.js, React + Vite, Firebase, Supabase, Vercel, Git/GitHub, Android development with Expo React, and AI-assisted development."
+95,combined,"Tell me about Peter's background, skills, and experience","Peter Paul Poloan is a 4th-year Computer Science student and AI-augmented full-stack developer. He works with Next.js, React + Vite, Firebase, Vercel, and Git/GitHub, and interned as a Technical QA at ODI / Tidework LLC for almost 2 months."
+96,combined,Is Peter a student or a professional?,"Both. Peter is a 4th-year BSCS student (expected graduation 2027) with Technical QA internship experience, and he is open to freelance, contractual, and full-time work."
+97,combined,"What stack, database, and hosting does Peter use?","Peter builds with Next.js or React + Vite, uses Firebase Firestore and Firebase Authentication for data and login, and deploys on Vercel. He also has experience with Supabase."
+98,combined,"What does Peter use for frontend, backend, and deployment?","Frontend: Next.js, or React + Vite, with Tailwind CSS and shadcn/ui. Backend: Firebase Firestore and Auth, plus Supabase experience. Deployment: Vercel. Version control: Git and GitHub."
+99,combined,Does Peter know both Firebase and Supabase?,"Yes. Peter uses Firebase Firestore and Authentication in most of his projects, and has experience with Supabase for Postgres, row-level security, and realtime features."
+100,combined,Does Peter know React and Next.js?,Yes. Most of Peter's projects are built with Next.js or React + Vite.
+101,combined,Can Peter build both web and mobile apps?,"Yes. Peter focuses on web development with Next.js and React + Vite, and sometimes builds Android apps using Expo React."
+102,combined,Can Peter build a full-stack app from scratch and deploy it?,"Yes. Peter builds full-stack apps with Next.js or React + Vite and Firebase (Firestore and Auth), manages code with Git and GitHub, and deploys on Vercel."
+103,combined,Can Peter build my website and how do I contact him?,"Yes, Peter accepts freelance and contractual website and web app projects. Send your project details to peterpaulpoloan@gmail.com, call 09923885169 (DITO) or 09665625356 (Globe), or click ""Get in touch with me""."
+104,combined,"Does Peter know Git, GitHub, and Vercel?","Yes. Peter uses GitHub for version control with staging, branching, and rebasing, and has deployment experience on Vercel."
+105,combined,"What tools does Peter use for coding, testing, and documentation?","Coding: Claude Code with Obra Superpowers (personal projects) or BMAD (professional jobs), plus Graphify for mapping existing codebases. Testing: Playwright, following the testing pyramid. Documentation: README.md files."
+106,combined,How does Peter use AI and does he understand the code?,"Peter uses Claude Code with Obra Superpowers for personal projects, the BMAD method for professional jobs, and Graphify to map inherited codebases. He plans the architecture, reviews and tests the output, and can explain every part of his projects."
+107,combined,What is the difference between Peter's personal and professional workflow?,For personal projects Peter uses Claude Code with the Obra Superpowers framework. For professional jobs he uses the BMAD method.
+108,combined,Does Peter rely on AI or does he have his own skills?,"Peter uses AI to speed up implementation, but he understands the architecture, tech stack, and code he ships. His strengths are structuring work for AI agents with clear prompts and separation of concerns, and he can read, debug, and explain his work."
+109,combined,What are Peter's strengths and why should I hire him?,"Peter understands system structure and turns it into clear prompts for AI coding agents. He keeps projects modular and scalable with separation of concerns, documents in README.md, follows SDLC and testing best practices, takes ownership of his tasks, and communicates clearly."
+110,combined,How does Peter take over an existing codebase?,"Peter uses Graphify to map out the codebase that was handed to him, then works from that understanding using clear, well-separated prompts for AI coding agents."
+111,combined,What roles is Peter looking for and is he available?,"Peter is interested in web development and cybersecurity roles. He is open to freelance, contractual, and full-time work, with regular hours of 8:00 AM to 5:00 PM."
+112,combined,Is Peter interested in both web development and cybersecurity?,"Yes. Web development is his main focus, and he is also interested in cybersecurity, including securing AI-generated code, as well as machine learning and data science."
+113,combined,Does Peter have experience in QA or testing?,"Yes. Peter interned as a Technical QA at ODI / Tidework LLC for almost 2 months, uses Playwright, and applies STLC principles and the testing pyramid."
+114,combined,"What is Peter's full name, age, and where is he from?","Peter Paul Poloan, born June 29, 2004, based in Sorsogon City, Sorsogon, Philippines."
+115,combined,"What is Peter's name, course, and school?","Peter Paul Poloan, BSCS 4-1, at Sorsogon State University, College of Information and Communication Technology, Bulan Campus."
+116,combined,"What are Peter's phone, email, and where can I find his GitHub and LinkedIn?","Phone: 09923885169 (DITO) or 09665625356 (Globe). Email: peterpaulpoloan@gmail.com. GitHub: click the GitHub icon at the top of the profile. LinkedIn: use the ""Get in touch with me"" button."
+117,combined,What equipment does Peter work with?,"Peter works on a Lenovo ThinkPad X1 Carbon 7th Gen with 16GB RAM and a 256GB SSD, which is his main machine for programming, and he also has a phone."
+118,combined,What projects has Peter built and what tech did he use?,"Peter's projects include Delbert Boarding House, Kudos App, PomoGrove (his flagship), University Sports Center, and MeetingSense. Most are built with Next.js or React + Vite, Firebase Firestore and Auth, and deployed on Vercel. Each has a live demo link on its card in the feed."
+119,combined,What is Peter's best project and how can I try it?,Peter's flagship project is PomoGrove. Try it live using the link on its card in the feed.
+120,combined,Tell me everything about Peter,"Peter Paul Poloan is a 4th-year BSCS student (SorSU Bulan Campus, expected to graduate in 2027) and AI-augmented full-stack developer from Sorsogon City. He builds with Next.js, React + Vite, Firebase, and Vercel, interned as a Technical QA at ODI / Tidework LLC, and is open to freelance, contractual, and full-time work in web development and cybersecurity. Ask me about his projects, skills, or how to contact him."
+121,combined,Give me a quick summary of Peter,"Peter Paul Poloan: 4th-year BSCS student, AI-augmented full-stack developer, Technical QA intern experience, builds with Next.js and Firebase, open to freelance, contractual, and full-time work. Contact: peterpaulpoloan@gmail.com."
+122,combined,"Hi, can you tell me about Peter and how to reach him?","Hi! Peter Paul Poloan is a 4th-year BSCS student and AI-augmented full-stack developer focused on web development. You can reach him at peterpaulpoloan@gmail.com, by phone at 09923885169 (DITO) or 09665625356 (Globe), or via the ""Get in touch with me"" button."
+123,fallback,I have several questions about Peter at once,"Happy to help. Ask me your questions one by one or all together, and I'll answer each part I can. For anything I can't cover, click ""Get in touch with me"" to reach Peter directly."
+124,fallback,Can you help me with my homework?,"I can only help with questions about Peter, like his skills, projects, or how to contact him. Is there something you'd like to know about Peter?"
+125,fallback,Can you write code for me?,"I'm here to answer questions about Peter, not to write code. You can ask me about his projects or skills instead."
+126,fallback,What if the chatbot can't answer my question?,"For anything I can't answer, click ""Get in touch with me"" or email peterpaulpoloan@gmail.com and Peter will reply directly."
