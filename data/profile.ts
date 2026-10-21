@@ -18,7 +18,14 @@ export const conversations = [
   { label: 'PeterAI', preview: 'Ask my AI anything about me', kind: 'ai' },
 ]
 
-export const photos: string[] = []
+export const photos: string[] = [
+  '/3e6ead6d-51df-4dd6-b75f-2ae211ae3ef9.jpg',
+  '/04b75dbd-a524-43d0-9de2-28758e8965c0.jpg',
+  '/05e4539c-010a-4af0-b68a-40be13e9812e.jpg',
+  '/68ce5771-85d3-46bb-ac51-5e7baf3440f1.jpg',
+  '/151e4030-a071-4309-832a-526ad8aaffa1.jpg',
+  '/6326ad88-22de-43b0-8abb-09af31d0aa9c.jpg',
+];
 
 export type Project = { id: string; title: string; description: string; tags: string[]; image: string; likes: number; comments: number; pinned?: boolean; repo?: string; live: string }
 export type Comment = { name: string; text: string; time: string }
