@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { addComment, askPeterAI, getComments, getProjects, toggleHeart } from '@/lib/api'
 import { aiTools, conversations, photos, profile, projects as seedProjects, strengths, type Comment, type Project } from '@/data/profile'
@@ -21,45 +21,31 @@ function Comments({ project, onAdd }: { project: Project; onAdd: (id: string, co
 function PostCard({ project, onAdd }: { project: Project; onAdd: (id: string, c: Comment) => void }) { const [liked, setLiked] = useState(false); const [likes, setLikes] = useState(project.likes); const [expanded, setExpanded] = useState(false); useEffect(() => setLikes(project.likes), [project.likes]); return <article id={project.id} className="overflow-hidden rounded-xl border bg-card shadow-sm"><div className="flex items-center gap-2 px-4 py-2.5"><img src="/pfp.jpg" alt={profile.name} className="size-8 shrink-0 rounded-full object-cover" /><div className="min-w-0 flex-1"><div className="flex items-center gap-2"><b className="truncate text-xs">Peter Paul Poloan</b>{project.pinned && <span className="shrink-0 rounded-full bg-violet-100 px-1.5 py-0.5 text-[9px] font-bold text-violet-700 dark:bg-violet-950 dark:text-violet-300">Pinned</span>}</div></div>{project.repo && <a href={project.repo} target="_blank" rel="noreferrer" aria-label="View repo" className="shrink-0 text-muted-foreground hover:text-primary"><GitBranch className="size-4" /></a>}</div><div className="px-4 pb-2"><h2 className="text-sm font-bold leading-snug">{project.title}</h2><p className={`mt-1 text-xs leading-5 text-muted-foreground ${expanded ? '' : 'line-clamp-2'}`}>{project.description}</p><button onClick={() => setExpanded(!expanded)} className="mt-1 text-[11px] font-bold text-primary">{expanded ? 'Show less' : 'See more'}</button></div><img src={project.image} alt={`${project.title} project screenshot`} className="aspect-[16/8] w-full object-cover" /><div className="flex items-center justify-between px-5 py-3 text-xs text-muted-foreground"><span className="flex items-center gap-1"><Heart className={`size-4 ${liked ? 'fill-rose-500 text-rose-500' : ''}`} /> {likes} hearts</span><span>{project.comments} comments</span></div><div className="mx-5 flex border-t"><button onClick={async () => { const nextLiked = !liked; const prevLikes = likes; setLiked(nextLiked); setLikes(n => n + (nextLiked ? 1 : -1)); try { setLikes(await toggleHeart(project.id, nextLiked)) } catch { setLiked(!nextLiked); setLikes(prevLikes) } }} className={`flex flex-1 items-center justify-center gap-2 py-3 text-sm font-semibold hover:text-rose-500 ${liked ? 'text-rose-500' : 'text-muted-foreground'}`}><Heart className={`size-4 ${liked ? 'fill-current' : ''}`} /> Heart</button><button onClick={() => document.getElementById(`${project.id}-comments`)?.scrollIntoView({ behavior: 'smooth' })} className="flex flex-1 items-center justify-center gap-2 py-3 text-sm font-semibold text-muted-foreground hover:text-primary"><MessageSquare className="size-4" /> Comment</button><a href={project.live} target="_blank" rel="noreferrer" className="flex flex-1 items-center justify-center gap-2 py-3 text-sm font-semibold text-muted-foreground hover:text-primary"><ExternalLink className="size-4" /> Visit</a></div><div id={`${project.id}-comments`}><Comments project={project} onAdd={onAdd} /></div><div className="flex flex-wrap gap-1.5 px-4 pb-3">{project.tags.map(tag => <span key={tag} className="rounded-full border px-2 py-0.5 text-[10px] font-medium text-muted-foreground">#{tag}</span>)}</div></article> }
 
 function ProjectCarousel({ projects, onAdd }: { projects: Project[]; onAdd: (id: string, c: Comment) => void }) {
-  const track = useRef<HTMLDivElement>(null)
-  const [canPrev, setCanPrev] = useState(false)
-  const [canNext, setCanNext] = useState(false)
   const [active, setActive] = useState(0)
   const slides = projects.length + 1 // + "coming soon" tile
-  const update = useCallback(() => {
-    const el = track.current
-    if (!el) return
-    setCanPrev(el.scrollLeft > 4)
-    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
-    const first = el.firstElementChild as HTMLElement | null
-    const step = first ? first.offsetWidth + 16 : el.clientWidth
-    setActive(Math.min(slides - 1, Math.round(el.scrollLeft / step)))
-  }, [slides])
-  useEffect(() => {
-    const el = track.current
-    if (!el) return
-    el.scrollTo({ left: 0 })
-    update()
-    const ro = new ResizeObserver(update)
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [projects, update])
-  const goTo = (i: number) => { const el = track.current; const child = el?.children[i] as HTMLElement | undefined; if (el && child) el.scrollTo({ left: child.offsetLeft - el.offsetLeft, behavior: 'smooth' }) }
+  useEffect(() => setActive(0), [projects.length])
+  const go = (i: number) => setActive(((i % slides) + slides) % slides)
   if (projects.length === 0) return <section className="min-w-0 rounded-xl border bg-card p-12 text-center"><Search className="mx-auto size-8 text-muted-foreground" /><p className="mt-3 font-semibold">No projects found</p></section>
-  const slide = 'w-full shrink-0 snap-start snap-always'
-  return <section aria-roledescription="carousel" aria-label="Projects" className="relative min-w-0">
+  // Signed distance from the active slide, wrapped so the list loops around (…, -1, 0, 1, …)
+  const offsetOf = (i: number) => { let d = i - active; if (d > slides / 2) d -= slides; if (d < -slides / 2) d += slides; return d }
+  const items = [...projects.map(project => ({ key: project.id, node: <PostCard project={project} onAdd={onAdd} /> })), { key: '__more', node: <div className="flex h-full min-h-64 flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed bg-card p-8 text-center"><span className="text-2xl text-muted-foreground">+</span><p className="text-sm font-semibold">More projects coming soon</p><p className="text-xs text-muted-foreground">I&apos;m adding more of my work here.</p></div> }]
+  return <section aria-roledescription="carousel" aria-label="Projects" className="min-w-0" onKeyDown={e => { if (e.target instanceof HTMLInputElement) return; if (e.key === 'ArrowLeft') go(active - 1); if (e.key === 'ArrowRight') go(active + 1) }}>
     <div className="mb-3 flex items-center justify-between">
-      <h2 className="text-lg font-bold">Projects <span className="text-sm font-medium text-muted-foreground">· swipe to browse</span></h2>
+      <h2 className="text-lg font-bold">Projects <span className="text-sm font-medium text-muted-foreground">· {active + 1} / {slides}</span></h2>
       <div className="flex gap-1.5">
-        <button aria-label="Previous project" disabled={!canPrev} onClick={() => goTo(active - 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronLeft className="size-4" /></button>
-        <button aria-label="Next project" disabled={!canNext} onClick={() => goTo(active + 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronRight className="size-4" /></button>
+        <button aria-label="Previous project" onClick={() => go(active - 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted"><ChevronLeft className="size-4" /></button>
+        <button aria-label="Next project" onClick={() => go(active + 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted"><ChevronRight className="size-4" /></button>
       </div>
     </div>
-    <div ref={track} onScroll={update} className="flex snap-x snap-mandatory items-start gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      {projects.map(project => <div key={project.id} className={slide}><PostCard project={project} onAdd={onAdd} /></div>)}
-      <div className={`${slide} flex min-h-64 flex-col items-center justify-center gap-1.5 self-stretch rounded-xl border border-dashed bg-card/50 p-8 text-center`}><span className="text-2xl text-muted-foreground">+</span><p className="text-sm font-semibold">More projects coming soon</p><p className="text-xs text-muted-foreground">I&apos;m adding more of my work here.</p></div>
-    </div>
-    <div className="mt-3 flex justify-center gap-1.5">{Array.from({ length: slides }, (_, i) => <button key={i} aria-label={`Go to project ${i + 1}`} onClick={() => goTo(i)} className={`h-1.5 rounded-full transition-all ${i === active ? 'w-5 bg-primary' : 'w-1.5 bg-muted-foreground/40'}`} />)}</div>
+    <motion.div onPanEnd={(_, info) => { if (info.offset.x < -50) go(active + 1); else if (info.offset.x > 50) go(active - 1) }} style={{ touchAction: 'pan-y' }} className="grid select-none overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+      {items.map((item, i) => {
+        const offset = offsetOf(i)
+        const isActive = offset === 0
+        const visible = Math.abs(offset) <= 1
+        return <motion.div key={item.key} aria-hidden={!isActive} initial={false} animate={{ x: `${offset * 104}%`, scale: isActive ? 1 : 0.88, opacity: isActive ? 1 : visible ? 0.55 : 0, rotateY: offset * -18 }} transition={{ type: 'spring', stiffness: 260, damping: 30 }} onClick={isActive ? undefined : () => go(i)} style={{ zIndex: isActive ? 2 : visible ? 1 : 0, transformPerspective: 1200 }} className={`col-start-1 row-start-1 w-[80%] self-start justify-self-center sm:w-[62%] xl:w-[50%] ${isActive ? '' : 'cursor-pointer [&>*]:pointer-events-none'} ${visible ? '' : 'pointer-events-none'}`}>{item.node}</motion.div>
+      })}
+    </motion.div>
+    <div className="mt-3 flex justify-center gap-1.5">{items.map((item, i) => <button key={item.key} aria-label={`Go to project ${i + 1}`} onClick={() => go(i)} className={`h-1.5 rounded-full transition-all ${i === active ? 'w-5 bg-primary' : 'w-1.5 bg-muted-foreground/40'}`} />)}</div>
   </section>
 }
 
