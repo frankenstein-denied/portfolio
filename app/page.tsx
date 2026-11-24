@@ -44,16 +44,15 @@ function ProjectCarousel({ projects, onAdd }: { projects: Project[]; onAdd: (id:
     ro.observe(el)
     return () => ro.disconnect()
   }, [projects, update])
-  const scrollBy = (dir: 1 | -1) => { const el = track.current; if (el) el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: 'smooth' }) }
   const goTo = (i: number) => { const el = track.current; const child = el?.children[i] as HTMLElement | undefined; if (el && child) el.scrollTo({ left: child.offsetLeft - el.offsetLeft, behavior: 'smooth' }) }
   if (projects.length === 0) return <section className="min-w-0 rounded-xl border bg-card p-12 text-center"><Search className="mx-auto size-8 text-muted-foreground" /><p className="mt-3 font-semibold">No projects found</p></section>
-  const slide = 'w-[85%] shrink-0 snap-start sm:w-[calc((100%-16px)/2)] xl:w-[calc((100%-32px)/3)]'
+  const slide = 'w-full shrink-0 snap-start snap-always'
   return <section aria-roledescription="carousel" aria-label="Projects" className="relative min-w-0">
     <div className="mb-3 flex items-center justify-between">
       <h2 className="text-lg font-bold">Projects <span className="text-sm font-medium text-muted-foreground">· swipe to browse</span></h2>
       <div className="flex gap-1.5">
-        <button aria-label="Previous projects" disabled={!canPrev} onClick={() => scrollBy(-1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronLeft className="size-4" /></button>
-        <button aria-label="Next projects" disabled={!canNext} onClick={() => scrollBy(1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronRight className="size-4" /></button>
+        <button aria-label="Previous project" disabled={!canPrev} onClick={() => goTo(active - 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronLeft className="size-4" /></button>
+        <button aria-label="Next project" disabled={!canNext} onClick={() => goTo(active + 1)} className="rounded-full border bg-card p-2 shadow-sm hover:bg-muted disabled:opacity-40"><ChevronRight className="size-4" /></button>
       </div>
     </div>
     <div ref={track} onScroll={update} className="flex snap-x snap-mandatory items-start gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
